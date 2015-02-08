@@ -1,0 +1,50 @@
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+#navbar-nav-left, #navbar-nav-right {
+    margin-left: 0;
+}
+
+.jumbotron {
+    padding-top: 1px;
+    padding-bottom: 10px;
+}
+@media all and (min-width: 480px) {
+    .jumbotron h1 {
+        font-size: 52px;
+    }
+    .mobile-notice {
+        display: none;
+    }
+}
+@media all and (max-width: 479px) {
+    .jumbotron h1 {
+        font-size: 42px;
+    }
+    .jumbotron p {
+        font-size: 18px;
+    }
+    .mobile-notice {
+        display: block;
+    }
+}
+
+.panel-input {
+    width: 500px;
+    max-width: 100%;
+}
+
+table#cubjectives > tbody > tr > th,
+table#cubjectives > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.your-real-record {
+    font-size: 90%;
+    color: #c00;
+}
+
+footer {
+    color: #95a5a6;
+}

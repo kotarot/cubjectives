@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{{ url_for('static', filename='flat-ui/dist/css/vendor/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='flat-ui/dist/css/flat-ui.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='chart.css') }}" rel="stylesheet">
+<title>Speed-Cubjectives :: A tool computes statistics-based speedcubing objectives for you</title>
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+{% include 'header.html' %}
+
+<div class="container">
+  {% include 'tron.html' %}
+
+  <p>
+    The tool computes statistics-based speedsolving objectives for you.<br>
+    Given your record of a <a href="https://www.worldcubeassociation.org/" target="_blank">WCA</a> events,
+    the tool calcultes and tells you <a href="https://www.worldcubeassociation.org/results/misc/export.html" target="_blank">WCA-database</a>-based objectives in the other events.
+  </p>
+  <p>
+    Please enter your record of <b>{{ params.fullname_base }}</b> <small><a href="#" id="link-change-event">[change event]</a></small>,
+    or just enter your WCA ID.
+  </p>
+
+  <div id="panel-input-event" class="panel panel-default panel-input" style="display:none;"><div class="panel-body">
+    <form action="./" method="GET">
+      <select id="select-change-event" name="base" class="form-control mbs">
+        {% for event in params.wca_events %}
+          <option value="{{ event[0] }}">{{ event[1] }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit" id="button-change-event" class="btn btn-primary btn-lg" style="width:100%;">Change base event</button>
+    </form>
+  </div></div><!-- /#panel-input-event -->
+
+  <div id="panel-input-record" class="panel panel-default panel-input"><div class="panel-body">
+    <form>
+      <div class="form-group">
+        <label for="input-record">Your record of <i>{{ params.fullname_base }}</i> (in <span class="unit-base"></span>), or your WCA ID if you have a record of <i>{{ params.fullname_base }}</i>,
+        <span style="color:#999;">e.g. <span class="format-example-base"></span>, or <b>2010TERA01</b></span>.</label>
+        <div class="input-group">
+          <input id="input-record" type="text" value="" placeholder="Your record or WCA ID" class="form-control" />
+          <div class="input-group-addon"><span class="unit-base">sec</span></div>
+        </div><!-- /.input-group -->
+        <input type="text" name="dummy" style="display:none;" />
+      </div><!-- /.form-group -->
+      <button type="button" id="get-cubjectives" class="btn btn-primary btn-lg" style="width:100%;">Get Cubjectives!</button>
+    </form>
+  </div></div><!-- /#panel-input-record -->
+  <div id="input-error" class="alert alert-danger" style="display:none;"></div>
+
+  <h3>Your Cubjectives</h3>
+  <div id="output-error" class="alert alert-danger" style="display:none;">Loading error. Please try again.</div>
+  <div id="output-loading" style="display:none;">Loading... Please wait for a moment.</div>
+  <div id="output" style="display:none;">
+    <table id="cubjectives" class="table table-hover">
+      <thead>
+        <tr><th>Event</th><th>Computed Objective</th><th>More Info</th></tr>
+      </thead>
+      <tbody>
+        {% for event in params.wca_events %}
+          <tr id="cubjectives-{{ event[0] }}">
+            <th scope="row">{{ event[1] }}</th>
+            <td id="cubjectives-record-{{ event[0] }}"></td>
+            <td id="cubjectives-info-{{ event[0] }}">
+              <a class="btn btn-default" href="{{ url_for('chart') }}?ex={{ params.base }}&ey={{ event[0] }}" role="button">View chart</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div><!-- #output -->
+
+  <h3>Notes</h3>
+  {% include 'notes.html' %}
+</div><!-- /.container -->
+
+{% include 'footer.html' %}
+
+<script src="{{ url_for('static', filename='flat-ui/dist/js/vendor/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='flat-ui/dist/js/flat-ui.min.js') }}"></script>
+<script src="{{ url_for('wcajs') }}"></script>
+<script>
+{% include 'functions.js' %}
+var query_base = '{{ params.base }}';
+</script>
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+
+</body>
+</html>

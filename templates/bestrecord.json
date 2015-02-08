@@ -1,0 +1,5 @@
+{
+    "id": "{{ params.id }}",
+    "event": "{{ params.event }}",
+    "best": {{ params.best }}
+}

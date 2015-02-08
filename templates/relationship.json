@@ -1,0 +1,5 @@
+{
+    "ex": "{{ params.ex }}",
+    "ey": "{{ params.ey }}",
+    "relationship": {{ params.json }}
+}

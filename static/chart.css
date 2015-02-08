@@ -1,0 +1,21 @@
+.chart-info {
+    font-size: 16px;
+}
+
+/* SVG area */
+.axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+.axis .tick line {
+    stroke: #999;
+    opacity: 0.5;
+}
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+text.label {
+    font-size: 16px;
+}

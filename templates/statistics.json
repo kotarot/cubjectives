@@ -1,0 +1,6 @@
+{
+    "base": "{{ params.base }}",
+    "statistics": [
+        {{ params.json }}
+    ]
+}

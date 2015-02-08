@@ -1,0 +1,246 @@
+/****************************************************************
+ * Creates tables for each event.
+ */
+
+/* 333 */
+DROP TABLE IF EXISTS CUBJECTIVES_333;
+CREATE TABLE CUBJECTIVES_333 (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_333 (
+  SELECT personId, best/100
+  FROM RanksAverage
+  WHERE eventId = '333'
+);
+ALTER TABLE CUBJECTIVES_333 ADD PRIMARY KEY (personID);
+
+/* 444 */
+DROP TABLE IF EXISTS CUBJECTIVES_444;
+CREATE TABLE CUBJECTIVES_444 (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_444 (
+  SELECT personId, best/100
+  FROM RanksAverage
+  WHERE eventId = '444'
+);
+ALTER TABLE CUBJECTIVES_444 ADD PRIMARY KEY (personID);
+
+/* 555 */
+DROP TABLE IF EXISTS CUBJECTIVES_555;
+CREATE TABLE CUBJECTIVES_555 (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_555 (
+  SELECT personId, best/100
+  FROM RanksAverage
+  WHERE eventId = '555'
+);
+ALTER TABLE CUBJECTIVES_555 ADD PRIMARY KEY (personID);
+
+/* 222 */
+DROP TABLE IF EXISTS CUBJECTIVES_222;
+CREATE TABLE CUBJECTIVES_222 (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_222 (
+  SELECT personId, best/100
+  FROM RanksAverage
+  WHERE eventId = '222'
+);
+ALTER TABLE CUBJECTIVES_222 ADD PRIMARY KEY (personID);
+
+/* 333bf */
+DROP TABLE IF EXISTS CUBJECTIVES_333bf;
+CREATE TABLE CUBJECTIVES_333bf (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_333bf (
+  SELECT personId, best/100
+  FROM RanksSingle
+  WHERE eventId = '333bf'
+);
+ALTER TABLE CUBJECTIVES_333bf ADD PRIMARY KEY (personID);
+
+/* 333oh */
+DROP TABLE IF EXISTS CUBJECTIVES_333oh;
+CREATE TABLE CUBJECTIVES_333oh (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_333oh (
+  SELECT personId, best/100
+  FROM RanksAverage
+  WHERE eventId = '333oh'
+);
+ALTER TABLE CUBJECTIVES_333oh ADD PRIMARY KEY (personID);
+
+/* 333fm */
+DROP TABLE IF EXISTS CUBJECTIVES_333fm;
+CREATE TABLE CUBJECTIVES_333fm (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best int(11) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_333fm (
+  SELECT personId, best
+  FROM RanksSingle
+  WHERE eventId = '333fm'
+);
+ALTER TABLE CUBJECTIVES_333fm ADD PRIMARY KEY (personID);
+
+/* 333ft */
+DROP TABLE IF EXISTS CUBJECTIVES_333ft;
+CREATE TABLE CUBJECTIVES_333ft (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_333ft (
+  SELECT personId, best/100
+  FROM RanksAverage
+  WHERE eventId = '333ft'
+);
+ALTER TABLE CUBJECTIVES_333ft ADD PRIMARY KEY (personID);
+
+/* minx */
+DROP TABLE IF EXISTS CUBJECTIVES_minx;
+CREATE TABLE CUBJECTIVES_minx (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_minx (
+  SELECT personId, best/100
+  FROM RanksAverage
+  WHERE eventId = 'minx'
+);
+ALTER TABLE CUBJECTIVES_minx ADD PRIMARY KEY (personID);
+
+/* pyram */
+DROP TABLE IF EXISTS CUBJECTIVES_pyram;
+CREATE TABLE CUBJECTIVES_pyram (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_pyram (
+  SELECT personId, best/100
+  FROM RanksAverage
+  WHERE eventId = 'pyram'
+);
+ALTER TABLE CUBJECTIVES_pyram ADD PRIMARY KEY (personID);
+
+/* sq1 */
+DROP TABLE IF EXISTS CUBJECTIVES_sq1;
+CREATE TABLE CUBJECTIVES_sq1 (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_sq1 (
+  SELECT personId, best/100
+  FROM RanksAverage
+  WHERE eventId = 'sq1'
+);
+ALTER TABLE CUBJECTIVES_sq1 ADD PRIMARY KEY (personID);
+
+/* clock */
+DROP TABLE IF EXISTS CUBJECTIVES_clock;
+CREATE TABLE CUBJECTIVES_clock (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_clock (
+  SELECT personId, best/100
+  FROM RanksAverage
+  WHERE eventId = 'clock'
+);
+ALTER TABLE CUBJECTIVES_clock ADD PRIMARY KEY (personID);
+
+/* skewb */
+DROP TABLE IF EXISTS CUBJECTIVES_skewb;
+CREATE TABLE CUBJECTIVES_skewb (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_skewb (
+  SELECT personId, best/100
+  FROM RanksAverage
+  WHERE eventId = 'skewb'
+);
+ALTER TABLE CUBJECTIVES_skewb ADD PRIMARY KEY (personID);
+
+/* 666 */
+DROP TABLE IF EXISTS CUBJECTIVES_666;
+CREATE TABLE CUBJECTIVES_666 (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_666 (
+  SELECT personId, best/100
+  FROM RanksAverage
+  WHERE eventId = '666'
+);
+ALTER TABLE CUBJECTIVES_666 ADD PRIMARY KEY (personID);
+
+/* 777 */
+DROP TABLE IF EXISTS CUBJECTIVES_777;
+CREATE TABLE CUBJECTIVES_777 (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_777 (
+  SELECT personId, best/100
+  FROM RanksAverage
+  WHERE eventId = '777'
+);
+ALTER TABLE CUBJECTIVES_777 ADD PRIMARY KEY (personID);
+
+/* 444bf */
+DROP TABLE IF EXISTS CUBJECTIVES_444bf;
+CREATE TABLE CUBJECTIVES_444bf (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_444bf (
+  SELECT personId, best/100
+  FROM RanksSingle
+  WHERE eventId = '444bf'
+);
+ALTER TABLE CUBJECTIVES_444bf ADD PRIMARY KEY (personID);
+
+/* 555bf */
+DROP TABLE IF EXISTS CUBJECTIVES_555bf;
+CREATE TABLE CUBJECTIVES_555bf (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best decimal(8,2) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_555bf (
+  SELECT personId, best/100
+  FROM RanksSingle
+  WHERE eventId = '555bf'
+);
+ALTER TABLE CUBJECTIVES_555bf ADD PRIMARY KEY (personID);
+
+/* 333mbf */
+DROP TABLE IF EXISTS CUBJECTIVES_333mbf;
+CREATE TABLE CUBJECTIVES_333mbf (
+  personId varchar(10) NOT NULL DEFAULT '',
+  best int(11) DEFAULT NULL
+);
+INSERT INTO CUBJECTIVES_333mbf (
+  SELECT personId, 99 - best DIV 10000000
+  FROM RanksSingle
+  WHERE eventId = '333mbf' AND best < 1000000000
+);
+ALTER TABLE CUBJECTIVES_333mbf ADD PRIMARY KEY (personID);
+
+/* For cache */
+DROP TABLE IF EXISTS CUBJECTIVES_CACHE;
+CREATE TABLE CUBJECTIVES_CACHE (
+  ex varchar(10) NOT NULL DEFAULT '',
+  ey varchar(10) NOT NULL DEFAULT '',
+  includingData tinyint(1) NOT NULL DEFAULT 0,
+  json longtext DEFAULT NULL
+);
