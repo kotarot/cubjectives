@@ -44,7 +44,8 @@
   <div id="panel-input-record" class="panel panel-default panel-input"><div class="panel-body">
     <form>
       <div class="form-group">
-        <label for="input-record">Your record of <i>{{ params.fullname_base }}</i> (in <span class="unit-base"></span>), or your WCA ID if you have a record of <i>{{ params.fullname_base }}</i>,
+        <label for="input-record">Your record of <i>{{ params.fullname_base }}</i> (in <span class="unit-base"></span>),
+        or your WCA ID if you have a record of <i>{{ params.fullname_base }}</i>,
         <span style="color:#999;">e.g. <span class="format-example-base"></span>, or <b>2010TERA01</b></span>.</label>
         <div class="input-group">
           <input id="input-record" type="text" value="" placeholder="Your record or WCA ID" class="form-control" />
@@ -61,16 +62,19 @@
   <div id="output-error" class="alert alert-danger" style="display:none;">Loading error. Please try again.</div>
   <div id="output-loading" style="display:none;">Loading... Please wait for a moment.</div>
   <div id="output" style="display:none;">
+    <p>Here is list of your cubjectives.<br>
+    Cubers like you (cubers who solve <i>{{ params.fullname_base }}</i> in <b class="cubjectives-record-{{ params.base }}"></b>)
+    likely have the ablities to solve all WCA events as shown below:</p>
     <table id="cubjectives" class="table table-hover">
       <thead>
         <tr><th>Event</th><th>Computed Objective</th><th>More Info</th></tr>
       </thead>
       <tbody>
         {% for event in params.wca_events %}
-          <tr id="cubjectives-{{ event[0] }}">
+          <tr class="cubjectives-{{ event[0] }}">
             <th scope="row">{{ event[1] }}</th>
-            <td id="cubjectives-record-{{ event[0] }}"></td>
-            <td id="cubjectives-info-{{ event[0] }}">
+            <td class="cubjectives-record-{{ event[0] }}"></td>
+            <td class="cubjectives-info-{{ event[0] }}">
               <a class="btn btn-default" href="{{ url_for('chart') }}?ex={{ params.base }}&ey={{ event[0] }}" role="button">View chart</a>
             </td>
           </tr>

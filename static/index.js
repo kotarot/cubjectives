@@ -13,7 +13,7 @@ $(document).ready(function() {
     $('.unit-base').html(event_unit(query_base));
     $('.format-example-base').html(event_format_example(query_base));
     $('#select-change-event').val(query_base);
-    $('#cubjectives-info-' + query_base).html('');
+    $('.cubjectives-info-' + query_base).html('<span class="your-real-record">This is your real record.</span>');
 });
 
 $('#link-change-event').click(function() {
@@ -139,11 +139,10 @@ var request_two_jsons = function() {
 
 // Calculates cubjectives of all events.
 var calculate_cubjectives = function() {
-    var your_real = ' <span class="your-real-record">This is your real record.</span>';
     if (target == '333fm' || target == '333mbf') {
-        $('#cubjectives-record-' + cubjectives['base']).html(round2(cubjectives['_record']) + ' ' + event_unit(cubjectives['base']) + your_real);
+        $('.cubjectives-record-' + cubjectives['base']).html(round2(cubjectives['_record']) + ' ' + event_unit(cubjectives['base']));
     } else {
-        $('#cubjectives-record-' + cubjectives['base']).html(format_time(cubjectives['_record']) + your_real);
+        $('.cubjectives-record-' + cubjectives['base']).html(format_time(cubjectives['_record']));
     }
 
     cubjectives['output'] = {};
@@ -154,9 +153,9 @@ var calculate_cubjectives = function() {
         var intercept = stat[i]['line']['intercept'];
         cubjectives['output'][target] = slope * cubjectives['_record'] + intercept;
         if (target == '333fm' || target == '333mbf') {
-            $('#cubjectives-record-' + target).text(round2(cubjectives['output'][target]) + ' ' + event_unit(target));
+            $('.cubjectives-record-' + target).text(round2(cubjectives['output'][target]) + ' ' + event_unit(target));
         } else {
-            $('#cubjectives-record-' + target).text(format_time(cubjectives['output'][target]));
+            $('.cubjectives-record-' + target).text(format_time(cubjectives['output'][target]));
         }
     }
     show_output();
